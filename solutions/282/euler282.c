@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// real	0m0.382s
+// user	0m0.276s
+// sys	0m0.104s
+// 99% CPU
+
 long int		mod = 1475789056;
 
 long int		ack(int val, int mod)
