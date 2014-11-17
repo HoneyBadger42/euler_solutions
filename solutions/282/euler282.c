@@ -38,4 +38,3 @@ int				main()
 	printf("%ld\n", (ack(7, mod) + 2 * ack(10, mod) - (3 * 3) + srcAck) % mod);
 	return 0;
 }
-
