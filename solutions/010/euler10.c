@@ -10,7 +10,6 @@ int				main()
 	long int	res;
 
 	list[0] = 2;
-	list[MAX - 1] = 1;
 	for (i=3, res=2; i < MAX; i += 2)
 	{
 		for (check=1,j=0; list[j] <= sqrt(i); j++)
