@@ -51,7 +51,6 @@ int			main()
 	qsort(&t[0], MAX, sizeof(char *), alphacmp);
 	for (i=0; t[i][0] >= 'A' && t[i][0] <= 'Z'; i++)
 	{
-//	printf("%s\n", t[i]);
 		for (j=0, c=0; t[i][j]; j++)
 			c += (t[i][j] - '@');
 		res += c * (i + 1);
