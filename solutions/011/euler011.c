@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-# define SIZE 20
+# define SZ 20
 
-int			bf(int t[SIZE][SIZE])
+int			bf(int t[SZ][SZ])
 {
 	int		x, y, res=0, sum1=0;
 
-	for (x=0; x <= SIZE - 1; x++)
-		for (y=0; y <= SIZE - 1; y++)
+	for (x=0; x <= SZ - 1; x++)
+		for (y=0; y <= SZ - 1; y++)
 		{
 			if (x <= 16 && y <= 16)
 				sum1 = t[x][y] * t[x+1][y+1] * t[x+2][y+2] * t[x+3][y+3];
@@ -25,7 +25,7 @@ int			bf(int t[SIZE][SIZE])
 
 int			main()
 {
-	int		t[SIZE][SIZE]={
+	int		t[SZ][SZ]={
 		{ 8, 2,22,97,38,15, 0, 4, 0,75, 4, 5, 7,78,52,12,50,77,91, 8},
 		{49,49,99,40,17,81,18,57,60,87,17,40,98,43,69,48, 4,56,62, 0},
 		{81,49,31,73,55,79,14,29,93,71,40,67,53,88,30, 3,49,13,36,65},
