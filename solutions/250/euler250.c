@@ -1,39 +1,37 @@
 #include <stdio.h>
 
-#define BIG 10000000000000000LL
+#define TS 10000000000000000LL
+#define M 250250
 
 long long		sume[2][250];
 
 int				main()
 {
-	int			b,n,i,j,p;
+	int			n,n1,n2,i,j;
 	long long	*s,*t,*u;
 
 	s = sume[0];
 	t = sume[1];
 	s[1] = 1;
-	for (n=2; n <= 250250; n++)
+	for (n=2; n <= M; n++)
 	{
-		p = 1;
-		b = n;
-		for (i=1; i <= n;i <<= 1)
+		for (n2=1, n1=n, i=1; i <= n; i <<= 1)
 		{
-			b %= 250;
-			if (i & n)
-				p = (p * b) % 250;
-			b *= b;
+			n1 %= 250;
+			n2 = (i&n) ? (n2 * n1) % 250 : n2;
+			n1 *= n1;
 		}
 		for (i=0; i < 250; i++)
 		{
-			j = (i + p >= 250) ? (i + p - 250) : i + p;
+			j = (i + n2 >= 250) ? (i + n2 - 250) : i + n2;
 			t[j] = s[i] + s[j];
-			t[j] = (t[j] >= BIG) ? (t[j] - BIG) : t[j];
+			t[j] -= (t[j] >= TS) ? TS : 0;
 		}
 		u = t;
 		t = s;
 		s = u;
-		s[p]++;
-		s[j] = (s[j] >= BIG) ? s[j]-BIG : s[j];
+		s[n2]++;
+		s[j] -= (s[j] >= TS) ? TS : 0;
 	}
 	return (printf("%lld\n",s[0]));
 }
