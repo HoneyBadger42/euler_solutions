@@ -33,5 +33,5 @@ int				main()
 		s[n2]++;
 		s[j] -= (s[j] >= TS) ? TS : 0;
 	}
-	return (printf("%lld\n",s[0]));
+	return (printf("%lld\n", s[0]));
 }
