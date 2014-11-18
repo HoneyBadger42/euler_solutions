@@ -5,8 +5,8 @@
 int				main()
 {
 
-	long double	tmp,sum;
 	FILE		*fd = fopen("numlist.txt", "r");
+	long double	tmp,sum;
 
 	if (!fd)
 		return (-1);
