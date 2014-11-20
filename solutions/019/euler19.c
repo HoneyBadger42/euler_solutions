@@ -5,7 +5,8 @@ int			main()
 	return (printf("%d\n", (100 * 12) / 7));
 }
 
-/** USELESS BRUTE FORCE
+/** USELESS BRUTE FORCE || IT'S WAY BETTER TO THINK A BIT
+
 # define START 1901
 # define END 2001
 
@@ -25,4 +26,5 @@ int			main()
 	}
 	return (printf("%d\n", res));
 }
+
 */
